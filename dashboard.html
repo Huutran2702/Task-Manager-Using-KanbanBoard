@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title kanban"> <strong>Hữu's Kanban</strong> </div>
+        <div class="title rename">
+            <input type="text" placeholder="Đổi tên bảng" id="name_Kanban">
+        </div>
+        <div class="title update">    
+            <a href="javascript:;" onclick="updateList()">Update</a>
+           
+        </div>
+        <div class="title select">
+            
+            <input title="Change Background Color" type="color" id="color-backgroud" oninput="selectColor()">
+            <a href="javascript:;" class="text-font">Color</a>
+            <select name="" id="list-work" onchange="selectKanban()" title="Change list">
+            </select>
+            <a href="javascript:;" class="text-font">List</a>
+        </div>
+        <div class="title input">
+            <input type="text" placeholder="Tạo bảng mới" id="add-New-Kaban">
+        </div>
+        <div class="title create">
+            <a href="javascript:;" onclick="addNewKanban ()"> Create </a>
+            <a href="javascript:;" onclick="deleteThisKanban()">Delete</a>
+        </div>
+       
+    </div>
+    <div class="data" id="data-work">
+        <table class="data-cell work" id="tb_wl_0" ondrop="drop(event,0)" ondragover="allowDrop(event)">
+            <thead>
+                <tr>
+                    <th >Danh sách công việc cần làm</th>
+                </tr>
+            </thead>
+            <tbody  id="tb-0">
+                <tr>
+                    <td>
+
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                       <a href="javascript:;" onclick="addWork(0)" id="add-work-0" >+ Thêm công việc</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <table class="data-cell work" id="tb_wl_1" ondrop="drop(event,1)"  ondragover="allowDrop(event)">
+            <thead> 
+                <th > Danh sách công việc đang làm</th>
+            </thead>
+            <tbody  id="tb-1">
+                <tr >
+                    <td>
+                      
+                    </td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a href="javascript:;" onclick="addWork(1)" id="add-work-1" >+ Thêm công việc</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <table class="data-cell  work" id="tb_wl_2" ondrop="drop(event,2)" ondragover="allowDrop(event)" >
+            <thead>
+                <th >Danh sách công việc hoàn thành</th>
+            </thead>
+            <tbody id="tb-2" >
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <a href="javascript:;" onclick="addWork(2)" id="add-work-2" >+ Thêm công việc</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+<script src="./JS/dashboard.js"></script>
+
+</html>

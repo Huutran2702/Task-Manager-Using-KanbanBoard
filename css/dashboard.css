@@ -1,0 +1,198 @@
+* {
+    margin:0px;
+    padding:0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+body {
+    background-image: url("https://i.pinimg.com/originals/25/95/e1/2595e124451e10fda4a61fa300af6b61.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+/* Phần tiêu đề  */
+.container {
+    display: table;
+    width: 100%;
+    background-color: rgb(8, 138, 155);
+    border-left:1px solid;
+}
+.title {
+    display: table-cell;
+    color: white;
+}
+.kanban {
+    width: 15%;
+}
+.kanban>strong {
+    font-size: x-large;
+    padding: 10px;
+    margin-left: 10px;
+   
+}
+.rename {
+    width: 15%;
+}
+.rename>input {
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.rename>input:hover {
+    background-color: beige;
+}
+.update {
+    text-align: left;
+    height: 40px;
+    width: 7%;
+}
+.update>a {
+    font-size: larger;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+.update>a:hover {
+    background-color: darkblue;
+}
+.select {
+    width: 30%;
+}
+.select>select {
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    width: 200px;
+}
+.select>select>option {
+    font-size: medium;
+}
+.select>select:hover {
+    background-color: beige;
+}
+.text-font {
+    font-size: larger;
+    text-decoration: none;
+    color: lightgray;
+}
+.input>input {
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.input>input:hover {
+    background-color: beige;
+}
+.create>a {
+    margin-left: 20px;
+    font-size: larger;
+    color: white;
+    text-decoration: none;
+}
+.create>a:hover {
+    background-color: darkblue;
+}
+.delete {
+    text-align: left;
+}
+.delete>a {
+    margin-left: 20px;
+    font-size: larger;
+    color: white;
+    text-decoration: none;
+}
+.delete>a:hover {
+    background-color: darkblue;
+}
+#color-backgroud {
+    height: 20px;
+}
+/* #tb_wl_0>tfoot>tr>td>input {
+    float: left;
+}
+#tb_wl_1>tfoot>tr>td>input {
+    float: left;
+}
+#tb_wl_2>tfoot>tr>td>input {
+    float: left;
+} */
+/* Phần thân */
+.data {
+    display: table;
+    width: 80%;
+    margin: 10px auto;
+}
+.data-cell {
+    display: table-cell;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 25%;
+    
+}
+.data-cell>table {
+    padding: 10px auto;
+    border: 1px solid black;
+}
+td, th {
+    text-align: center;
+    border-collapse: collapse;
+}
+th {
+    background-color: rgb(8, 138, 155);
+    color: white;
+    padding: 20px;
+    border-radius: 10px
+}
+.work>tbody>td :hover {
+    background-color: khaki;
+}
+.text-center {
+    text-align: center;
+}
+td {
+    background-color: lightskyblue;
+    border-radius: 10px
+}
+td:hover {
+    background-color:lightgray;
+}
+/* Button */
+.d-none {
+    display: none;
+}
+#add-work-2, #add-work-1, #add-work-0 {
+    text-decoration: none;
+    Color : black ;
+}
+.btn-edit-work {
+    background-color: lightskyblue;
+    color: rgb(20, 18, 18);
+    border: none;
+    text-decoration: none;
+    border-radius: 3px;
+}
+.btn-edit-work:hover {
+    background-color: skyblue;
+    
+}
+.btn-update-work {
+    background-color: lightcoral ;
+    color: rgb(20, 18, 18);
+    border: none;
+    border-radius: 3px;
+}
+.btn-update-work:hover {
+    background-color: coral;
+}
+.btn-remove-work {
+    background-color: lightgreen ;
+    color: rgb(20, 18, 18);
+    border: none;
+    border-radius: 3px;
+}
+.btn-remove-work:hover {
+    background-color: greenyellow;
+}
+.tf-ip {
+    border-radius: 5px;
+}
