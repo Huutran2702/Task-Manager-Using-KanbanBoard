@@ -53,9 +53,6 @@ function startProgram() {
 function addNewKanban() {
     let newKanban = document.getElementById("add-New-Kaban").value; 
     simpleKanban.unshift(new TableKanban(newKanban,setListWork()));
-    // let index = findIndex(newKanban);
-    // let listWork = document.getElementById("list-work");
-    // listWork.innerHTML += `<option value="${simpleKanban[index].id}">${simpleKanban[index].id}</option>`;
     startProgram();
     document.getElementById("add-New-Kaban").value = "";
     showTotalList();
@@ -120,14 +117,14 @@ function showList(index) {
     let todoList = document.getElementById(`tb_wl_${index}`);
     todoList.children[1].innerHTML = "";
     simpleKanban[findIndexThisList()].arr[index].forEach(function (value, index1) {
-        todoList.children[1].innerHTML += `
+        todoList.children[1].innerHTML +=   `
                                                         <tr id="tr_${index}_${index1}" >
                                                                     <td id ="td_${index}_${index1}" draggable="true" ondragstart="drag(event,${index},${index1})">
                                                                     <div id = "di_${index}_${index1}" onclick = "editWork(${index},${index1})" >${value}</div>
                                                                     </td> 
                                                         </tr>
         
-                                                    `
+                                            `
     })
     saveLocalStorage("Huu_Kanban", simpleKanban);
 }
@@ -140,13 +137,13 @@ function showTotalList() {
 // Hàm thêm công việc mới
 function addWork(index) {
     let tb = document.getElementById(`tb_wl_${index}`);
-    tb.children[2].children[0].children[0].innerHTML = `
-                                            <td> 
-                                            <input type='text' id="ip_${index}" placeholder="Thêm công việc" class = "tf-ip">
-                                            <input type="button" value="Add" class="btn-edit-work" id="btn_add_${index}"
-                                            onclick="addButton(${index})" align = "right"> 
-                                            </td> 
-                                            `
+    tb.children[2].children[0].children[0].innerHTML =  `
+                                                            <td> 
+                                                            <input type='text' id="ip_${index}" placeholder="Thêm công việc"  onblur = "addButton(${index})" class = "tf-ip">
+                                                            <input type="button" value="Add" class="btn-edit-work" id="btn_add_${index}"
+                                                            onclick="addButton(${index})" align = "right"> 
+                                                            </td> 
+                                                        `
     
 }
 // Hàm thao tác onclick nút nhấn Add
@@ -155,20 +152,20 @@ function addButton(index) {
     let tb = document.getElementById(`tb_wl_${index}`);
     if (addWorkToArr == "") {
         tb.children[2].children[0].children[0].innerHTML = `
-                                            <td> 
-                                            <a href="javascript:;" onclick="addWork(${index})" id="add-work-${index}">+ Thêm công việc</a>
-                                            </td> 
-                                            `
+                                                            <td> 
+                                                            <a href="javascript:;" onclick="addWork(${index})" id="add-work-${index}">+ Thêm công việc</a>
+                                                            </td> 
+                                                           `
     } else {
         simpleKanban[findIndexThisList()].arr[index].push(addWorkToArr);
         document.getElementById(`ip_${index}`).value = "";
         let worklist = document.getElementById(`tb_wl_${index}`);
         worklist.children[1].innerHTML = "";
-        tb.children[2].children[0].children[0].innerHTML = `
-                                            <td> 
-                                            <a href="javascript:;" onclick="addWork(${index})" id="add-work-${index}">+ Thêm công việc</a>
-                                            </td> 
-                                            `
+        tb.children[2].children[0].children[0].innerHTML =  `
+                                                                <td> 
+                                                                <a href="javascript:;" onclick="addWork(${index})" id="add-work-${index}">+ Thêm công việc</a>
+                                                                </td> 
+                                                            `
         showTotalList();
     }
     saveLocalStorage("Huu_Kanban", simpleKanban);
@@ -176,7 +173,7 @@ function addButton(index) {
 // Hàm edit công việc
 function editWork(index, index1) {
     let tb = document.getElementById(`tb_wl_${index}`);
-    tb.children[1].children[index1].children[0].innerHTML = `<input type='text' id="pn_${index}_${index1}" value ='${simpleKanban[findIndexThisList()].arr[index][index1]}' class = "tf-ip">
+    tb.children[1].children[index1].children[0].innerHTML = `<input type='text' id="pn_${index}_${index1}" onblur = "updateWork(${index},${index1})" value ='${simpleKanban[findIndexThisList()].arr[index][index1]}' class = "tf-ip">
                                                             <input type="button" value="Update" class="btn-update-work" onclick = "updateWork(${index},${index1})">
                                                             <input type="button" value="Remove" class="btn-remove-work" onclick = "removeWork(${index},${index1})">
                                                             `;
